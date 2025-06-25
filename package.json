@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "exercise blog sql",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "node --watch app.js"
   },
