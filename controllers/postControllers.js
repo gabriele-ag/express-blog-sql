@@ -19,7 +19,7 @@ const index = (req, res) => {
 const show = (req, res) => {
      const id = req.params.id
 
-     const sql = "SELECT * FROM `posts` WHERE id = ?"
+     const sql = "SELECT * FROM `posts` INNER JOIN `post_tag` ON `posts`.`id` = `post_tag`.`post_id` WHERE `id` = ?"
 
      connection.query(sql, [id], (err, result) => {
         if(err) {
