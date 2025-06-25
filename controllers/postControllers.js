@@ -5,16 +5,22 @@ const index = (req, res) => {
     const sql = " SELECT * FROM `posts`"
 
     connection.query(sql, (err, result) => {
-        console.log(result)
+        if(err) {
+            console.log("Error")
+        }
+
+        res.status(200).json({
+            data: result,
+        })
     })
 
-    res.json({
-        data: "array di post"
-    })
 }
 
 const show = (req, res) => {
      const id = req.params.id
+     res.json({
+        data: `Dati dei post con id ${id}`
+     })
 }
 
 
